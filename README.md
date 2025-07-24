@@ -12,7 +12,7 @@ In addition to the analytical modeling in Python, the project features a dynamic
 - Build and evaluate time series forecasting models to predict future emissions.
 - Develop an interactive Power BI dashboard for visualization and stakeholder reporting.
 
-## Data Source
+## Data Overview
 
 - Monthly electricity generation and emissions data for Indian states from Jan 2019 to Dec 2023.
 - Data includes:
@@ -20,6 +20,11 @@ In addition to the analytical modeling in Python, the project features a dynamic
          - Emissions (ktCO₂): Source-wise monthly carbon emissions.
          - Emission Intensity (gCO₂/kWh): Emissions per unit of electricity.
          - States & Union Territories: Regional granularity included for localized analysis.
+  
+## Tools & Technologies
+
+- Data Analysis	Python- Pandas, NumPy, Matplolib
+- ML Modeling	Python – Pandas, NumPy,Statsmodel, Scikit-learn, Matplotlib, Seaborn
 
 ## Data Analysis and Modeling
 
@@ -72,14 +77,23 @@ We use:
 - Key metrics used: RMSE, MAPE, and RMSPE.
 
 #### Results
-- ETS provided strong seasonal pattern capture but underperformed slightly when structural shifts occurred.
 - ETS Model Evaluation:
 
-Metric	Value
-RMSE	161.87 ktCO₂
-MAPE	6.45%
-RMSPE	6.72%
+| Metric             | Value                              |
+| ------------------ | ---------------------------------- |
+| MAPE           | 0.07202                              |
+| RMSE      | 16640.653                             |
+| RMSPE | 9.1033                              |
 
+- SARIMAX Model Evaluation:
+
+| Metric             | Value                              |
+| ------------------ | ---------------------------------- |
+| MAPE           | 0.07631                              |
+| RMSE      | 14617.199                            |
+| RMSPE | 8.3804                             |
+
+- ETS provided strong seasonal pattern capture but underperformed slightly when structural shifts occurred.
 - SARIMAX outperformed ETS across all evaluation metrics. It handled both trend and seasonal components effectively and yielded smoother forecasts with tighter residual bounds.
 
 
