@@ -69,11 +69,11 @@ We used:
 - Modeled with seasonal parameters to capture 12-month patterns.
 - Produced a more stable and accurate forecast for monthly emissions.
 
-###### Forecast Horizon: 
+##### Forecast Horizon: 
 - Forecasted for next 12 months ( Starting from March 2025 till March 2026)
   
 ##### Model Evaluation: 
-- Forecasts were compared against the actual validation data (last 12 months).
+- Forecasts were compared against the actual validation data (last 8 months).
 - Key metrics used: RMSE, MAPE, and RMSPE.
 
 #### Results
