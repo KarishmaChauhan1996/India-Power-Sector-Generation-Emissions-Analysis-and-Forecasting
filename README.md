@@ -1,7 +1,9 @@
 # India-Power-Sector-Generation-Emissions-Analysis-and-Forecasting
 
 ## Project Overview
-This project focuses on analyzing and forecasting electricity generation and emissions in India's power sector using Python and Power BI. The goal is to derive insights at both the national and state levels and predict future trends for CO₂ emissions using robust time series forecasting models.
+This project presents a comprehensive data analysis and time series forecasting of electricity generation and power sector emissions in India at both national and state levels. The analysis spans historical monthly data and aims to uncover trends, quantify emission contributions by energy sources, and forecast future emissions using statistical models.
+
+In addition to the analytical modeling in Python, the project features a dynamic Power BI dashboard to visualize key metrics and enable interactive exploration by stakeholders and policymakers.
 
 ## Objectives
 
@@ -33,10 +35,16 @@ This project focuses on analyzing and forecasting electricity generation and emi
 Created custom visualizations using matplotlib and seaborn.
 
 ## Time Series Modeling
+A core component of this project involved building robust forecasting models to predict India’s monthly power sector emissions for the next 12 months. We implemented and compared two advanced time series models — Exponential Smoothing (ETS) and Seasonal AutoRegressive Integrated Moving Average with eXogenous regressors (SARIMAX) — using Python’s statsmodels library.
+We use:
 - Selected emissions as the target variable for forecasting.
-- Used two robust time series models:
+- Two robust time series models:
 
 ### A. ETS (Error-Trend-Seasonal) Model
+- The Holt-Winters Exponential Smoothing (ETS) model was configured with:
+- Trend: Additive
+- Seasonality: Multiplicative
+- Seasonal Periods: 12 (Monthly data)
 - Captures level, trend, and seasonality explicitly.
 - Provided a baseline forecast for emissions with seasonal cycles.
 
@@ -46,7 +54,22 @@ Created custom visualizations using matplotlib and seaborn.
 - Produced a more stable and accurate forecast for monthly emissions.
 
 ##### Forecast Horizon: 12 months ahead
-##### Model Evaluation: RMSE and MAPE calculated on validation data
+##### Model Evaluation: 
+- Forecasts were compared against the actual validation data (last 12 months).
+- Key metrics used: RMSE, MAPE, and RMSPE.
+
+### Results
+- ETS provided strong seasonal pattern capture but underperformed slightly when structural shifts occurred.
+- ETS Model Evaluation:
+
+Metric	Value
+RMSE	161.87 ktCO₂
+MAPE	6.45%
+RMSPE	6.72%
+
+- SARIMAX outperformed ETS across all evaluation metrics. It handled both trend and seasonal components effectively and yielded smoother forecasts with tighter residual bounds.
+
+
 
 ## Power BI Dashboard
 - An interactive dashboard was developed in Microsoft Power BI to empower decision-makers and energy analysts.
