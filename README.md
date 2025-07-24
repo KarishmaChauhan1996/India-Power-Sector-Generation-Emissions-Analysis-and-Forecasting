@@ -14,17 +14,17 @@ In addition to the analytical modeling in Python, the project features a dynamic
 
 ## Data Overview
 
-- Monthly electricity generation and emissions data for Indian states from Jan 2019 to Dec 2023.
-- Data includes:
-         - Generation (GWh): Source-wise monthly electricity generation.
-         - Emissions (ktCO₂): Source-wise monthly carbon emissions.
-         - Emission Intensity (gCO₂/kWh): Emissions per unit of electricity.
-         - States & Union Territories: Regional granularity included for localized analysis.
-  
+- Monthly electricity generation and emissions data for Indian states from Jan 2019 to feb 2025:
+- Generation (GWh): Source-wise monthly electricity generation.
+- Emissions (ktCO₂): Source-wise monthly carbon emissions.
+- Emission Intensity (gCO₂/kWh): Emissions per unit of electricity.
+- States & Union Territories: Regional granularity included for localized analysis.
+                             
 ## Tools & Technologies
 
-- Data Analysis	Python- Pandas, NumPy, Matplolib
-- ML Modeling	Python – Pandas, NumPy,Statsmodel, Scikit-learn, Matplotlib, Seaborn
+- Data Analysis- Python- Pandas, NumPy, Matplolib
+- Visulaiztion- PowerBI
+- ML Modeling- Python – Pandas, NumPy,Statsmodel, Scikit-learn, Matplotlib, Seaborn
 
 ## Data Analysis and Modeling
 
@@ -52,7 +52,7 @@ In addition to the analytical modeling in Python, the project features a dynamic
 
 ### Time Series Modeling
 A core component of this project involved building robust forecasting models to predict India’s monthly power sector emissions for the next 12 months. We implemented and compared two advanced time series models — Exponential Smoothing (ETS) and Seasonal AutoRegressive Integrated Moving Average with eXogenous regressors (SARIMAX) — using Python’s statsmodels library.
-We use:
+We used:
 - Selected emissions as the target variable for forecasting.
 - Two robust time series models:
 
@@ -114,3 +114,9 @@ We use:
 - powerbi/ # Power BI dashboard file (.pbix)
 - outputs/ # Plots, reports, and metrics
 - README.md # Project documentation
+
+
+### Future Enhancements
+- Incorporate exogenous factors like policy changes or fuel price volatility into SARIMAX.
+- Build a real-time data ingestion pipeline for automated monthly updates.
+- Extend forecasts to state-level emissions using panel time series models (e.g., VAR, Prophet)
