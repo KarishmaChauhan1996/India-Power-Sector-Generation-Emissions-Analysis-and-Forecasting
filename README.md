@@ -105,3 +105,12 @@ We use:
        - State-Level Drilldown: Compare states by emission intensity, generation mix.
        - Dynamic Filters: Time period.
        - Custom Visuals: Pie charts, line plots, bar charts, KPI cards.
+
+  
+  ## Project Structure
+
+- data/ # Raw and processed datasets
+- notebooks/ # Jupyter notebooks for EDA and modeling
+- powerbi/ # Power BI dashboard file (.pbix)
+- outputs/ # Plots, reports, and metrics
+- README.md # Project documentation
