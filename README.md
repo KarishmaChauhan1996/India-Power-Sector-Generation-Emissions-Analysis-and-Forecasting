@@ -20,27 +20,38 @@ In addition to the analytical modeling in Python, the project features a dynamic
          - Emissions (ktCO₂): Source-wise monthly carbon emissions.
          - Emission Intensity (gCO₂/kWh): Emissions per unit of electricity.
          - States & Union Territories: Regional granularity included for localized analysis.
-  
-## Data Preparation & Transformation
+
+## Data Analysis and Modeling
+
+### Data Preparation & Transformation
+
 - Cleaned and reshaped the raw long-format data.
 - Normalized column names and converted all time series to monthly DateTime index.
 - Aggregated data at:
--         - National level (India total)
--         - State level (per individual state/UT)
--     
-## Exploratory Data Analysis (EDA)
+         - National level (India total)
+         - State level (per individual state/UT)
+    
+### Exploratory Data Analysis (EDA)
+
 - Monthly and yearly trends in generation and emissions.
 - Contribution analysis using pie and bar charts for.
 - Total emissions by energy source.
-Created custom visualizations using matplotlib and seaborn.
+- Created custom visualizations using matplotlib and seaborn.
 
-## Time Series Modeling
+### Time Series Analysis
+
+- Checked the Seasonality and Trend.
+- Checked the statinarity of the series using Adfuller test.
+- Checked Autocorrleation using ACF and PACF
+- Checked Moving Average trend for differnet windows (3,6,9,12).
+
+### Time Series Modeling
 A core component of this project involved building robust forecasting models to predict India’s monthly power sector emissions for the next 12 months. We implemented and compared two advanced time series models — Exponential Smoothing (ETS) and Seasonal AutoRegressive Integrated Moving Average with eXogenous regressors (SARIMAX) — using Python’s statsmodels library.
 We use:
 - Selected emissions as the target variable for forecasting.
 - Two robust time series models:
 
-### A. ETS (Error-Trend-Seasonal) Model
+#### A. ETS (Error-Trend-Seasonal) Model
 - The Holt-Winters Exponential Smoothing (ETS) model was configured with:
 - Trend: Additive
 - Seasonality: Multiplicative
@@ -48,17 +59,19 @@ We use:
 - Captures level, trend, and seasonality explicitly.
 - Provided a baseline forecast for emissions with seasonal cycles.
 
-### B. SARIMAX (Seasonal AutoRegressive Integrated Moving Average with Exogenous Variables)
+#### B. SARIMAX (Seasonal AutoRegressive Integrated Moving Average with Exogenous Variables)
 - Tuned using AIC minimization and auto-ARIMA logic.
 - Modeled with seasonal parameters to capture 12-month patterns.
 - Produced a more stable and accurate forecast for monthly emissions.
 
-##### Forecast Horizon: 12 months ahead
+###### Forecast Horizon: 
+- Forecasted for next 12 months ( Starting from March 2025 till March 2026)
+  
 ##### Model Evaluation: 
 - Forecasts were compared against the actual validation data (last 12 months).
 - Key metrics used: RMSE, MAPE, and RMSPE.
 
-### Results
+#### Results
 - ETS provided strong seasonal pattern capture but underperformed slightly when structural shifts occurred.
 - ETS Model Evaluation:
 
